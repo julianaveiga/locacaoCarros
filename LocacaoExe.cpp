@@ -52,6 +52,7 @@ int main(){
 						//cadastro de pessoa fisica
 						case 1:
 						//	system("cls");
+						while(feof(dadospf) == 0){
 							printf("Digite seu nome: ");
 							scanf("%s", &nomepf);
 							//escrevendo no final do arquivo, sendo o f do começo de file
@@ -84,6 +85,7 @@ int main(){
 							fprintf(dadospf, "%s", cidadepf);
 							fprintf(dadospf, "\n\n");
 							fclose(dadospf);
+						}
 						break;
 						
 						//cadstro de pessoa juridica
@@ -142,37 +144,37 @@ int main(){
 			
 			case 4:
 				system("cls");
+				char c;
+				while(!feof(listardisponivel)){
 				
-				while(lista != EOF){
-
-				lista = fgetc(listardisponivel);
-				
-				printf("%c", lista);
+				printf("%c", c);
+				c= fgetc(listardisponivel);
 				}
 				
 				printf("1- Voltar ao menu anterior\n");
 				scanf("%d", &menu);
+				fclose(listardisponivel);
 			break;
 			
 			case 5:
 				system("cls");
-				
-				while(lista != EOF){
-
-				lista = fgetc(listaralugados);
-				
-				printf("%c", lista);
+				char c;
+				while(!feof(listaralugados){
+								
+				printf("%c", c);
+				c = fgetc(listaralugados);
 				}
-				
+
 				printf("1- Voltar ao menu anterior\n");
 				scanf("%d", &menu);
+				fclose(listaralugados);
+
 			break;
 			
 			case 6:
 				system("cls");
-				
-				
 			break;
+			
 		}
 	}
 }
